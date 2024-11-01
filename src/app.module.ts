@@ -2,10 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 
-import { PrismaModule } from 'prisma/prisma.module';
+import { PrismaModule } from 'src/prisma/prisma.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { MongoModule } from 'mongo/mongo.module';
+import { MongoModule } from 'src/mongo/mongo.module';
 
 @Module({
   imports: [
