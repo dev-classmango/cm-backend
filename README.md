@@ -20,6 +20,8 @@ Before getting started, ensure you have the following:
 
 - **[Node.js](https://nodejs.org/en)**: LTS version installed.
 
+- **[PostgreSQL](https://www.postgresql.org/)**: Installed with the **DATABASE** and **USER** created.
+
 - **[MongoDB](https://www.mongodb.com/docs/manual/tutorial/install-mongodb-on-os-x/)**: Installed.
 
 - **Repository**: Clone the repository from [GitHub](https://github.com/dev-classmango/cm-backend).
