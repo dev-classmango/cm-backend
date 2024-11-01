@@ -1,0 +1,39 @@
+services:
+  classmango:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    depends_on:
+      - postgres
+      - mongodb
+    environment:
+      PORT: ${PORT}
+      APP_ENV: ${APP_ENV}
+      PG_DATABASE_URL: postgres://user:password@postgres:5432/classmango?schema=public
+      MG_DATABASE_URL: mongodb://mongodb:27017/classmango
+    ports:
+      - "7070:7070"
+
+  postgres:
+    image: postgres:16
+    ports:
+      - "6060:5432"
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: classmango
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  mongodb:
+    image: mongo:6
+    ports:
+      - "5050:27017"
+    environment:
+      MONGO_INITDB_DATABASE: classmango
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  postgres_data:
+  mongodb_data:
