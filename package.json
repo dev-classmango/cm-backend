@@ -11,7 +11,8 @@
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
-    "start:prod": "node dist/main",
+    "start:prod": "node dist/src/main",
+    "docker:up": "docker compose -f docker-compose.yaml up --build -d",
     "prisma:seed": "npx prisma db seed",
     "prisma:reset": "npx prisma migrate reset",
     "prisma:studio": "npx prisma studio",
@@ -28,7 +29,8 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "prisma": {
-    "schema": "./prisma/schema.prisma"
+    "schema": "./prisma/schema.prisma",
+    "seed": "ts-node ./prisma/seed"
   },
   "dependencies": {
     "@clerk/clerk-sdk-node": "^5.0.55",
